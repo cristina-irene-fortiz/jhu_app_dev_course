@@ -5,6 +5,10 @@ body {
     padding: 0;
 }
 
+p { 
+    margin-top: 10%;
+}
+
 
 .container {
     display: grid;
