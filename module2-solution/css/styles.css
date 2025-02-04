@@ -20,22 +20,22 @@ body {
     border: 1px solid black;
     position: relative;
     box-sizing: border-box;
-    height: 150px;
-    overflow: hidden;
-    cursor: default;
+    overflow: hidden; 
+    height: 150px; 
+    cursor: default; 
 }
 
 .section:hover {
-    overflow-y: auto;
-    cursor: ns-resize;
+    overflow-y: auto; 
+    cursor: ns-resize; 
 }
 
 .section::-webkit-scrollbar {
-    display: none;
+    display: none; 
 }
 
 .section:hover::-webkit-scrollbar {
-    display: block;
+    display: block; 
     width: 8px;
 }
 
@@ -106,24 +106,24 @@ body {
     }
 
     .section-title {
-        width: 100%;
+        width: 100%; 
         text-align: center;
         font-size: 1rem;
         white-space: normal;
-        line-height: 1.5;
+        line-height: 1.5; 
     }
 
     .menu-title {
-        display: none;
+        display: none; 
     }
 
     .categories-title {
-        display: block;
-        text-align: left;
-        margin-left: 10px;
+        display: block; 
+        text-align: left; 
+        margin-left: 10px; 
     }
 
     .section {
-        padding-top: 60px;
+        padding-top: 60px; 
     }
 }
