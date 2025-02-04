@@ -20,6 +20,28 @@ body {
     border: 1px solid black;
     position: relative;
     box-sizing: border-box;
+    height: 150px;
+    overflow: hidden;
+    cursor: default;
+}
+
+.section:hover {
+    overflow-y: auto;
+    cursor: ns-resize;
+}
+
+.section::-webkit-scrollbar {
+    display: none;
+}
+
+.section:hover::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+}
+
+.section::-webkit-scrollbar-thumb {
+    background-color: darkgray;
+    border-radius: 4px;
 }
 
 .section-title {
@@ -46,7 +68,6 @@ body {
 .sushi {
     background-color: #c39ae4;
 }
-
 
 .menu-title {
     font-size: 2rem;
@@ -89,6 +110,7 @@ body {
         text-align: center;
         font-size: 1rem;
         white-space: normal;
+        line-height: 1.5;
     }
 
     .menu-title {
@@ -99,5 +121,9 @@ body {
         display: block;
         text-align: left;
         margin-left: 10px;
+    }
+
+    .section {
+        padding-top: 60px;
     }
 }
