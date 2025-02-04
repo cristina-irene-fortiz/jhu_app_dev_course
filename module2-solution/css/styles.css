@@ -14,7 +14,6 @@ body {
     box-sizing: border-box;
 }
 
-/* Sections */
 .section {
     background-color: lightgray;
     padding: 20px;
@@ -84,7 +83,7 @@ body {
 .categories-title {
     display: none;
     font-size: 1rem;
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Monaco", monospace;
     text-align: left;
     margin: 10px 0;
 }
