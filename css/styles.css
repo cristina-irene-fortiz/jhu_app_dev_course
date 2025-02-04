@@ -10,19 +10,23 @@ body {
 }
 
 .section {
-    width: 30%;
-    background-color: lightgray;
-    padding: 20px;
-    border: 1px solid black;
-    position: relative;
+    width: 30%; 
+    background-color: lightgray; 
+    padding: 20px; 
+    border: 1px solid black; 
+    position: relative; 
+    box-sizing: border-box; 
 }
 
 .section-title {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 5px 10px;
-    font-weight: bold;
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    padding: 5px 10px; 
+    font-weight: bold; 
+    border: 1px solid black; 
+    background-color: lightgray; 
+    box-sizing: border-box; 
 }
 
 .chicken {
