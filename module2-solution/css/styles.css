@@ -35,6 +35,21 @@ body {
     text-align: center;
 }
 
+.chicken {
+    background-color: #b5d6ec;
+}
+
+.beef {
+    background-color: #9e026f;
+    color: white;
+}
+
+.sushi {
+    background-color: #c39ae4;
+}
+
+
+
 @media (min-width: 992px) {
     .container {
         grid-template-columns: repeat(3, 1fr); 
