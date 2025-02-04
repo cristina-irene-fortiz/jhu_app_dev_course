@@ -26,6 +26,19 @@ body {
     font-weight: bold;
 }
 
+.chicken {
+    background-color: #d19898;
+}
+
+.beef {
+    background-color: #bb4342;
+}
+
+.sushi {
+    background-color: #e4d09a;
+}
+
+
 /* Tablet View code */
 @media (max-width: 991px) {
     .section {
