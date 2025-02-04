@@ -14,6 +14,7 @@ body {
     box-sizing: border-box;
 }
 
+
 .section {
     background-color: lightgray;
     padding: 20px;
@@ -21,9 +22,29 @@ body {
     position: relative;
     box-sizing: border-box;
     overflow: hidden;
-    height: auto; 
+    height: 150px;
     cursor: default;
 }
+
+.section:hover {
+    overflow-y: auto;
+    cursor: ns-resize;
+}
+
+.section::-webkit-scrollbar {
+    display: none;
+}
+
+.section:hover::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+}
+
+.section::-webkit-scrollbar-thumb {
+    background-color: darkgray;
+    border-radius: 4px;
+}
+
 
 .section-title {
     position: absolute;
@@ -35,10 +56,6 @@ body {
     background-color: lightgray;
     box-sizing: border-box;
     text-align: center;
-    font-size: 1rem; 
-    white-space: nowrap; 
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .chicken {
@@ -62,6 +79,10 @@ body {
 
 .categories-title {
     display: none;
+    font-size: 1rem;
+    font-family: "Courier New", Courier, monospace;
+    text-align: left;
+    margin: 10px 0;
 }
 
 @media (min-width: 992px) {
@@ -86,48 +107,26 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .section {
-        height: 150px; 
-        overflow: hidden;
-        padding-top: 60px; 
-    }
-
-    .section:hover {
-        overflow-y: auto; 
-        cursor: ns-resize;
-    }
-
-    .section::-webkit-scrollbar {
-        display: none; 
-    }
-
-    .section:hover::-webkit-scrollbar {
-        display: block; 
-        width: 8px;
-    }
-
-    .section::-webkit-scrollbar-thumb {
-        background-color: darkgray;
-        border-radius: 4px;
-    }
-
     .section-title {
-        width: 100%; 
+        width: 100%;
         text-align: center;
         font-size: 1rem;
-        white-space: normal; 
-        line-height: 1.5; 
-        padding: 10px; 
-        background-color: lightgray; 
+        white-space: normal;
+        line-height: 1.5;
+        padding: 10px;
     }
 
     .menu-title {
-        display: none; 
+        display: none;
     }
 
     .categories-title {
-        display: block; 
+        display: block;
         text-align: left;
         margin-left: 10px;
+    }
+
+    .section {
+        padding-top: 60px;
     }
 }
