@@ -1,30 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignment Solution for Module 2!</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Food, LLC</a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="nav navbar-nav visible-xs">
+              <li><a href="#chicken">Chicken</a></li>
+              <li><a href="#beef">Beef</a></li>
+              <li><a href="#sushi">Sushi</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <h1 class="text-center">Our Menu</h1>
+      
+        <div class="row">
+          <div id="chicken" class="col-xs-12 col-sm-6 col-md-4 section">
+            <h3 class="text-center">Chicken</h3>
+            <p>Delicious Southern Honey Mustard Chicken...</p>
+          </div>
+          
+          <div id="beef" class="col-xs-12 col-sm-6 col-md-4 section">
+            <h3 class="text-center">Beef</h3>
+            <p>Angus Beef Steak Slices...</p>
+          </div>
+          
+          <div id="sushi" class="col-xs-12 col-sm-12 col-md-4 section">
+            <h3 class="text-center">Sushi</h3>
+            <p>Dragon Roll Sushi with fresh ingredients...</p>
+          </div>
+        </div>
+      </div>
+
+      <a href="#" class="btn btn-primary">Back to Top</a>
+
+
+
     <h1 class="menu-title">Our Menu</h1>
     <h1 class="categories-title">Categories</h1>
     <div class="container">
-        <div class="section">
-            <div class="short-section-title chicken">Chicken</div>
-            <div class="section-title chicken">Southern Honey Mustard Chicken with Fresh Herbs and Sweet Glaze</div>
-            <p>Indulge in the comforting flavors of the South with our tender chicken, marinated in a rich honey mustard blend and kissed with a touch of zesty lemon. Infused with fresh thyme and rosemary, this dish delivers a perfect balance of sweet and savory. The golden glaze caramelizes into a luscious coating, creating a crispy exterior that gives way to juicy, melt-in-your-mouth bites. It's a soul-warming, herbaceous delight that pairs beautifully with buttery mashed potatoes or cornbread.</p>
+      <div class="section">
+        <div class="short-section-title chicken">Chicken</div>
+        <div class="section-title chicken">
+          Southern Honey Mustard Chicken with Fresh Herbs and Sweet Glaze
         </div>
-        <div class="section">
-            <div class="short-section-title beef">Beef</div>
-            <div class="section-title beef">Angus Beef Steak Slices with Garlic, Rosemary, and Red Wine</div>
-            <p>Our Angus beef steak is a carnivore's dream, featuring thick, juicy slices perfectly seared to lock in flavor. Each cut is infused with a fragrant marinade of roasted garlic, fresh rosemary, and a splash of full-bodied red wine, adding depth and richness to every bite. As the steak cooks, the natural juices mingle with the wine to create a velvety sauce that’s as luxurious as it is irresistible. Perfectly paired with roasted vegetables or creamy horseradish sauce, this dish is an elevated take on classic comfort food.</p>
+        <p>
+          Indulge in the comforting flavors of the South with our tender
+          chicken, marinated in a rich honey mustard blend and kissed with a
+          touch of zesty lemon. Infused with fresh thyme and rosemary, this dish
+          delivers a perfect balance of sweet and savory. The golden glaze
+          caramelizes into a luscious coating, creating a crispy exterior that
+          gives way to juicy, melt-in-your-mouth bites. It's a soul-warming,
+          herbaceous delight that pairs beautifully with buttery mashed potatoes
+          or cornbread.
+        </p>
+      </div>
+      <div class="section">
+        <div class="short-section-title beef">Beef</div>
+        <div class="section-title beef">
+          Angus Beef Steak Slices with Garlic, Rosemary, and Red Wine
         </div>
-        <div class="section">
-            <div class="short-section-title sushi">Sushi</div>
-            <div class="section-title sushi">Dragon Roll Sushi with Raw Tuna, Cream Cheese, and Eel Sauce</div>
-            <p>Experience a mythical fusion of flavors with our Dragon Roll Sushi. Delicate slices of raw tuna embrace creamy, tangy cream cheese, all wrapped in perfectly seasoned rice and crispy seaweed. Topped with a mesmerizing drizzle of sweet and smoky eel sauce, this roll is both visually stunning and irresistibly delicious. The dragon-like presentation adds an enchanting touch, while the flavors transport your taste buds to the shores of Japan. Perfect for sushi lovers seeking a bold yet refined culinary adventure.</p>
+        <p>
+          Our Angus beef steak is a carnivore's dream, featuring thick, juicy
+          slices perfectly seared to lock in flavor. Each cut is infused with a
+          fragrant marinade of roasted garlic, fresh rosemary, and a splash of
+          full-bodied red wine, adding depth and richness to every bite. As the
+          steak cooks, the natural juices mingle with the wine to create a
+          velvety sauce that’s as luxurious as it is irresistible. Perfectly
+          paired with roasted vegetables or creamy horseradish sauce, this dish
+          is an elevated take on classic comfort food.
+        </p>
+      </div>
+      <div class="section">
+        <div class="short-section-title sushi">Sushi</div>
+        <div class="section-title sushi">
+          Dragon Roll Sushi with Raw Tuna, Cream Cheese, and Eel Sauce
         </div>
+        <p>
+          Experience a mythical fusion of flavors with our Dragon Roll Sushi.
+          Delicate slices of raw tuna embrace creamy, tangy cream cheese, all
+          wrapped in perfectly seasoned rice and crispy seaweed. Topped with a
+          mesmerizing drizzle of sweet and smoky eel sauce, this roll is both
+          visually stunning and irresistibly delicious. The dragon-like
+          presentation adds an enchanting touch, while the flavors transport
+          your taste buds to the shores of Japan. Perfect for sushi lovers
+          seeking a bold yet refined culinary adventure.
+        </p>
+      </div>
     </div>
-</body>
+  </body>
 </html>
