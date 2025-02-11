@@ -19,10 +19,15 @@
     position: relative;
     box-sizing: border-box;
     overflow: hidden;
-    height: auto;
     cursor: default;
-    min-height: 1000px; /* Forces scrolling */
+    min-height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 100%; 
 }
+
+
 
 .section p {
   text-align: justify;
