@@ -17,4 +17,5 @@
     overflow: hidden;
     height: auto;
     cursor: default;
+    min-height: 1000px; /* Forces scrolling */
 }
