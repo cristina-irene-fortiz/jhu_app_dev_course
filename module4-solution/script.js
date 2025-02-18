@@ -85,23 +85,21 @@ WARNING!!! WARNING!!!
   }
 
   var greetingsArr = names.map(getGreeting);
-  console.log("\nUsing map():");
+  console.log("\nBonus part!\nUsing the map() function:");
   console.log(greetingsArr);
 
-  var groupedGreetings = names.reduce(
-    (grouped, name) => {
-      var firstLetter = name.charAt(0).toLowerCase();
-      if (firstLetter === "j") {
-        grouped.bye.push(byeSpeaker.speakSimple(name));
-      } else {
-        grouped.hello.push(helloSpeaker.speakSimple(name));
-      }
-      return grouped;
-    },
-    { hello: [], bye: [] }
-  );
+  var groupedGreetings = names.reduce((groupings, name) => {
+    var firstLetter = name.charAt(0).toLowerCase();
+    var greeting = (firstLetter === "j") 
+      ? byeSpeaker.speakSimple(name) 
+      : helloSpeaker.speakSimple(name);
+  
+    (firstLetter === "j") ? groupings.bye.push(greeting) : groupings.hello.push(greeting);
+    return groupings;
+  }, { hello: [], bye: [] });
+  
 
-  console.log("\nUsing reduce():");
+  console.log("\nUsing the reduce() function:");
   console.log("Hello Group:", groupedGreetings.hello);
   console.log("Goodbye Group:", groupedGreetings.bye);
 })();
