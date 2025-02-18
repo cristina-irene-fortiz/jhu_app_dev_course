@@ -76,6 +76,7 @@ WARNING!!! WARNING!!!
     }
   }
 
+  // BONUS PART
   function getGreeting(name) {
     var firstLetter = name.charAt(0).toLowerCase();
     return firstLetter === "j"
