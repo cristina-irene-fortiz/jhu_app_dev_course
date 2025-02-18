@@ -2,7 +2,6 @@
 // See Lecture 52, part 2
 
 (function (window) {
-
   // STEP 3: Create an object, called 'helloSpeaker' to which you will attach
   // the "speak" method and which you will expose to the global context
   // See Lecture 52, part 1
@@ -18,6 +17,7 @@
     console.log(speakWord + " " + name);
   };
 
+  //Bonus method, does not use console.log
   helloSpeaker.speakSimple = function (name) {
     return speakWord + " " + name;
   };
