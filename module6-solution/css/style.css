@@ -34,3 +34,8 @@ body {
 button {
     width: 100%;
 }
+
+
+.bg-original{
+    background-color: #E0218A !important;
+}

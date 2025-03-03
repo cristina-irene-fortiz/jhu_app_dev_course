@@ -5,17 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lunch Check</title>
-
-    <!-- Bootstrap CSS (Use local file if downloaded, otherwise use CDN) -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/style.css">
-
-    <!-- AngularJS -->
     <script src="./js/angular.min.js"></script>
-
-    <!-- App JavaScript -->
     <script src="./js/app.js"></script>
 </head>
 
@@ -24,29 +16,25 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card shadow-lg">
-                    <div class="card-header text-center bg-primary text-white">
+                    <div class="card-header text-center bg-original text-white">
                         <h2>Lunch Checker</h2>
                     </div>
                     <div class="card-body">
                         <p class="text-center">Enter comma-separated lunch items:</p>
 
-                        <!-- Input Box -->
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" ng-model="lunchItems"
                                 placeholder="Enter food items here">
                         </div>
 
-                        <!-- Button -->
                         <div class="text-center">
                             <button class="btn btn-success" ng-click="checkLunch()">
                                 Check If Too Much
                             </button>
                         </div>
 
-                        <!-- Message -->
                         <p class="mt-3 text-center fw-bold" ng-style="messageStyle">{{ message }}</p>
 
-                        <!-- GIF Output -->
                         <img ng-src="{{ gifUrl }}" alt="Funny GIF" class="img-fluid mt-3" ng-if="gifUrl">
 
 
