@@ -1,5 +1,8 @@
 body {
-    background: linear-gradient(to bottom, #e0218a1f, #ffffff) !important;
+    background: linear-gradient(to bottom, rgba(224, 33, 138, 0.1), rgba(255, 255, 255, 0.5));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
 .container {
