@@ -20,22 +20,16 @@
                     </div>
                     <div class="card-body">
                         <p class="text-center">Enter comma-separated lunch items:</p>
-
-                        <!-- Input Box -->
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" 
                                    ng-model="lunchItems"
                                    placeholder="Enter food items here">
                         </div>
-
-                        <!-- Button -->
                         <div class="text-center">
                             <button class="btn btn-success" ng-click="checkLunch()">
                                 Check If Too Much
                             </button>
                         </div>
-
-                        <!-- Message -->
                         <p class="mt-3 text-center fw-bold"
                            ng-style="messageStyle">{{ message }}</p>
                     </div>
