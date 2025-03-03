@@ -1,24 +1,10 @@
+body {
+    background-color: #f8f9fa;
+}
+
 .container {
     text-align: center;
     margin-top: 50px;
-}
-
-input {
-    width: 300px;
-    padding: 5px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-}
-
-.message {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-
-body {
-    background-color: #f8f9fa;
 }
 
 .card {
@@ -31,11 +17,30 @@ body {
     font-weight: bold;
 }
 
+.input-group input {
+    font-size: 1.1rem;
+    padding: 10px;
+}
+
+.message {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
 button {
     width: 100%;
 }
 
-
-.bg-original{
+.bg-original {
     background-color: #E0218A !important;
+}
+
+/* For the GIF display */
+.img-fluid {
+    max-width: 80%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: auto;
 }

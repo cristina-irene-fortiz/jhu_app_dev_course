@@ -22,10 +22,14 @@
                     <div class="card-body">
                         <p class="text-center">Enter comma-separated lunch items:</p>
 
+                        <!-- Note: Empty items (", ,", ",,,") do not count as items towards the total-->
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" ng-model="lunchItems"
-                                placeholder="Enter food items here">
+                            <input type="text" class="form-control" 
+                                ng-model="lunchItems"
+                                placeholder="Enter food items here"
+                                ng-class="borderClass">
                         </div>
+
 
                         <div class="text-center">
                             <button class="btn btn-success" ng-click="checkLunch()">
