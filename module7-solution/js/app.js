@@ -7,7 +7,7 @@
       .service('ShoppingListCheckOffService', ShoppingListCheckOffService)
       .filter('angularDollars', AngularDollarsFilter);
   
-    // To Buy Controller
+    // To Buy Controller List
     ToBuyController.$inject = ['ShoppingListCheckOffService'];
     function ToBuyController(ShoppingListCheckOffService) {
       var toBuy = this;
@@ -19,7 +19,7 @@
       };
     }
   
-    // Already Bought Controller
+    // Already Bought Controller List
     AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
     function AlreadyBoughtController(ShoppingListCheckOffService) {
       var bought = this;
@@ -55,7 +55,7 @@
       };
     }
   
-    // Custom Filter
+    // Custom Angular Filter
     function AngularDollarsFilter() {
       return function (input) {
         var num = parseFloat(input);
