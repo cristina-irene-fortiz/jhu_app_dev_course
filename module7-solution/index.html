@@ -1,52 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="LunchCheck">
-
+<html lang="en" ng-app="ShoppingListCheckOff">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lunch Check</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/angular.min.js"></script>
-    <script src="./js/app.js"></script>
+  <meta charset="UTF-8">
+  <title>Shopping List CheckOff</title>
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
+<body>
 
-<body ng-controller="LunchCheckController">
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card shadow-lg">
-                    <div class="card-header text-center bg-original text-white">
-                        <h2>Lunch Checker</h2>
-                    </div>
-                    <div class="card-body">
-                        <p class="text-center">Enter comma-separated lunch items:</p>
+  <h1>Shopping List Check Off</h1>
 
-                        <!-- Note: Empty items (", ,", ",,,") do not count as items towards the total-->
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" 
-                                ng-model="lunchItems"
-                                placeholder="Enter food items here"
-                                ng-class="borderClass">
-                        </div>
-
-
-                        <div class="text-center">
-                            <button class="btn btn-success" ng-click="checkLunch()">
-                                Check If Too Much
-                            </button>
-                        </div>
-
-                        <p class="mt-3 text-center fw-bold" ng-style="messageStyle">{{ message }}</p>
-
-                        <img ng-src="{{ gifUrl }}" alt="Funny GIF" class="img-fluid mt-3" ng-if="gifUrl">
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="list-container">
+    <!-- To Buy List -->
+    <div ng-controller="ToBuyController as toBuyCtrl" class="list">
+      <h2>To Buy</h2>
+      <p class="message" ng-if="toBuyCtrl.items.length === 0">Everything is bought!</p>
+      <ul>
+        <li ng-repeat="item in toBuyCtrl.items">
+          Buy 
+          <input type="number" ng-model="item.quantity" min="1"> 
+          {{ item.name }} @ ${{ item.pricePerItem }}
+          <button ng-click="toBuyCtrl.buyItem($index)">Bought</button>
+        </li>
+      </ul>
     </div>
-</body>
 
+    <!-- Already Bought List -->
+    <div ng-controller="AlreadyBoughtController as boughtCtrl" class="list">
+      <h2>Already Bought</h2>
+      <p class="message" ng-if="boughtCtrl.items.length === 0">Nothing bought yet</p>
+      <ul>
+        <li ng-repeat="item in boughtCtrl.items">
+          Bought {{ item.quantity }} {{ item.name }} for total price of {{ (item.quantity * item.pricePerItem) | angularDollars }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="./js/angular.min.js"></script>
+  <script src="app.js"></script>
+
+</body>
 </html>

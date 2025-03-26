@@ -1,47 +1,67 @@
 (function () {
     'use strict';
-
-    angular.module('LunchCheck', [])
-    .controller('LunchCheckController', LunchCheckController);
-
-    LunchCheckController.$inject = ['$scope'];
-    function LunchCheckController($scope) {
-        $scope.lunchItems = "";
-        $scope.message = "";
-        $scope.messageStyle = {};
-        $scope.gifUrl = "";  
-        $scope.borderClass = ""; 
-
-        $scope.checkLunch = function () {
-            if (!$scope.lunchItems.trim()) {
-                $scope.message = "Please enter data first";
-                $scope.messageStyle = { "color": "red" };
-                $scope.borderClass = "border-danger"; 
-                $scope.gifUrl = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTA3M2ltcmNud2RneW82dzliODQ1anZtMmM2d3h3c3k0ZHY4eHh2ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/777Aby0ZetYE8/giphy.gif"; 
-                return;
-            }
-        
-            let items = $scope.lunchItems.split(',')
-                .map(item => item.trim()) // Trim spaces
-                .filter(item => item.length > 0); // Remove empty items
-        
-            if (items.length === 0) {
-                $scope.message = "Please enter data first";
-                $scope.messageStyle = { "color": "red" };
-                $scope.borderClass = "border-danger"; 
-                $scope.gifUrl = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTA3M2ltcmNud2RneW82dzliODQ1anZtMmM2d3h3c3k0ZHY4eHh2ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/777Aby0ZetYE8/giphy.gif";
-            } else if (items.length <= 3) {
-                $scope.message = "Enjoy!";
-                $scope.messageStyle = { "color": "green" };
-                $scope.borderClass = "border-success"; 
-                $scope.gifUrl = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWdrd3VubDFieHdiMnM0MmcxMW91eGJvazA5MHJiZ3V2YWtybXhkbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jKaFXbKyZFja0/giphy.gif"; 
-            } else {
-                $scope.message = "Too much!";
-                $scope.messageStyle = { "color": "green" };
-                $scope.borderClass = "border-success";
-                $scope.gifUrl = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2RzYzJ0Z2xkOHlkcnA4cGtnM3hkdnU0NjZzeHB5dnYwcmc3Mnd2MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/12uXi1GXBibALC/giphy.gif"; 
-            }
-        };
-        
+  
+    angular.module('ShoppingListCheckOff', [])
+      .controller('ToBuyController', ToBuyController)
+      .controller('AlreadyBoughtController', AlreadyBoughtController)
+      .service('ShoppingListCheckOffService', ShoppingListCheckOffService)
+      .filter('angularDollars', AngularDollarsFilter);
+  
+    // To Buy Controller
+    ToBuyController.$inject = ['ShoppingListCheckOffService'];
+    function ToBuyController(ShoppingListCheckOffService) {
+      var toBuy = this;
+  
+      toBuy.items = ShoppingListCheckOffService.getToBuyItems();
+  
+      toBuy.buyItem = function (index) {
+        ShoppingListCheckOffService.buyItem(index);
+      };
     }
-})();
+  
+    // Already Bought Controller
+    AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
+    function AlreadyBoughtController(ShoppingListCheckOffService) {
+      var bought = this;
+  
+      bought.items = ShoppingListCheckOffService.getBoughtItems();
+    }
+  
+    // Service
+    function ShoppingListCheckOffService() {
+      var service = this;
+  
+      var toBuyItems = [
+        { name: "cookies", quantity: 10, pricePerItem: 2 },
+        { name: "milk", quantity: 1, pricePerItem: 3 },
+        { name: "apples", quantity: 5, pricePerItem: 1.5 },
+        { name: "bread", quantity: 2, pricePerItem: 2.5 },
+        { name: "coffee", quantity: 1, pricePerItem: 10 }
+      ];
+  
+      var boughtItems = [];
+  
+      service.buyItem = function (index) {
+        var item = toBuyItems.splice(index, 1)[0];
+        boughtItems.push(item);
+      };
+  
+      service.getToBuyItems = function () {
+        return toBuyItems;
+      };
+  
+      service.getBoughtItems = function () {
+        return boughtItems;
+      };
+    }
+  
+    // Custom Filter
+    function AngularDollarsFilter() {
+      return function (input) {
+        var num = parseFloat(input);
+        return isNaN(num) ? "$$$0.00" : "$$$" + num.toFixed(2);
+      };
+    }
+  
+  })();
+  
