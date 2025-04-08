@@ -6,6 +6,7 @@
   .service('MenuSearchService', MenuSearchService)
   .directive('foundItems', FoundItemsDirective);
   
+  // Controller
   NarrowItDownController.$inject = ['MenuSearchService'];
   function NarrowItDownController(MenuSearchService) {
     var ctrl = this;
@@ -33,6 +34,7 @@
     };
   }
   
+  // Service
   MenuSearchService.$inject = ['$http'];
   function MenuSearchService($http) {
     var service = this;
@@ -54,7 +56,7 @@
         }
   
         var foundItems = [];
-
+  
         for (var i = 0; i < allItems.length; i++) {
           if (allItems[i].description &&
               allItems[i].description.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1) {
