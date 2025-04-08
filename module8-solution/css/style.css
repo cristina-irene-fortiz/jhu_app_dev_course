@@ -1,0 +1,92 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #ffe4f7;
+  margin: 20px;
+  color: #880e4f;
+}
+
+h1 {
+  text-align: center;
+  color: #c2185b;
+}
+
+.list-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.list {
+  width: 360px;
+  background: #fff0fa;
+  border: 2px solid #f8bbd0;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+}
+
+h2 {
+  border-bottom: 2px dashed #f06292;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  color: #ad1457;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin: 10px 0;
+  background: #fce4ec;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+input[type="number"] {
+  width: 60px;
+  margin-right: 10px;
+  padding: 4px;
+  border: 1px solid #f06292;
+  border-radius: 4px;
+}
+
+button {
+  background: linear-gradient(to right, #f06292, #f8bbd0);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(240, 98, 146, 0.3);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+button:hover {
+  background: linear-gradient(to right, #ec407a, #f48fb1);
+  box-shadow: 0 6px 16px rgba(240, 98, 146, 0.5);
+  transform: translateY(-2px);
+}
+
+
+.message {
+  font-style: italic;
+  color: #ba68c8;
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: #f06292;
+  box-shadow: 0 0 5px rgba(240, 98, 146, 0.5);
+}
+
