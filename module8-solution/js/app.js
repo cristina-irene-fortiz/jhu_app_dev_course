@@ -13,6 +13,7 @@
     ctrl.narrowItDown = function () {
       if (!ctrl.searchTerm) {
         ctrl.found = [];
+        ctrl.message = "Nothing found";
         return;
       }
   
@@ -41,14 +42,26 @@
         method: "GET",
         url: "https://coursera-jhu-default-rtdb.firebaseio.com/menu_items.json"
       }).then(function (response) {
-        var allItems = response.data.menu_items;
-        var foundItems = [];
+        var allItems = [];
   
+        for (var category in response.data) {
+          if (response.data.hasOwnProperty(category)) {
+            var menuItems = response.data[category].menu_items;
+            if (menuItems) {
+              allItems = allItems.concat(menuItems);
+            }
+          }
+        }
+  
+        var foundItems = [];
+
         for (var i = 0; i < allItems.length; i++) {
-          if (allItems[i].description.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1) {
+          if (allItems[i].description &&
+              allItems[i].description.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1) {
             foundItems.push(allItems[i]);
           }
         }
+  
         return foundItems;
       });
     };
