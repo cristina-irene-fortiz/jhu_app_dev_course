@@ -76,3 +76,8 @@ li button:hover {
   text-align: center;
   font-weight: bold;
 }
+
+.search-area {
+  text-align: center;
+  margin-bottom: 20px;
+}
