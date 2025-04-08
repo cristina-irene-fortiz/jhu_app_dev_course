@@ -2,14 +2,21 @@
 <html lang="en" ng-app="NarrowItDownApp">
 <head>
   <meta charset="utf-8">
-  <title>Menu Search</title>
+  <title>Narrow It Down For Me!</title>
 </head>
 <body ng-controller="NarrowItDownController as ctrl">
-  <input type="text" ng-model="ctrl.searchTerm">
+
+  <h1>Narrow It Down For Me!</h1>
+
+  <input type="text" ng-model="ctrl.searchTerm" placeholder="Enter search term">
   <button ng-click="ctrl.narrowItDown()">Narrow It Down For Me!</button>
 
   <found-items found="ctrl.found" on-remove="ctrl.removeItem(index)"></found-items>
 
+  <div ng-if="ctrl.message">
+    <strong>{{ ctrl.message }}</strong>
+  </div>
+  
   <script src="./js/angular.min.js"></script>
   <script src="./js/app.js"></script>
 
