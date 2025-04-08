@@ -20,12 +20,18 @@
   
       MenuSearchService.getMatchedMenuItems(ctrl.searchTerm)
       .then(function (items) {
-        ctrl.found = items;
+        ctrl.found = items || [];   
+  
         if (ctrl.found.length === 0) {
           ctrl.message = "Nothing found";
         } else {
           ctrl.message = "";
         }
+      })
+      .catch(function (error) {
+        console.error("Something went wrong:", error);  
+        ctrl.found = [];
+        ctrl.message = "Nothing found";
       });
     };
   
@@ -57,6 +63,7 @@
   
         var foundItems = [];
   
+        // Filter items safely
         for (var i = 0; i < allItems.length; i++) {
           if (allItems[i].description &&
               allItems[i].description.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1) {
@@ -69,6 +76,7 @@
     };
   }
   
+  // Directive
   function FoundItemsDirective() {
     var ddo = {
       restrict: 'E',
