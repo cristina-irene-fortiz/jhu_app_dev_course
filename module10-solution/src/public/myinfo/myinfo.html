@@ -1,0 +1,25 @@
+<div class="container" ng-if="!myInfoCtrl.notRegistered">
+    <h2>My Info</h2>
+  
+    <p><strong>First Name:</strong> {{ myInfoCtrl.user.firstName }}</p>
+    <p><strong>Last Name:</strong> {{ myInfoCtrl.user.lastName }}</p>
+    <p><strong>Email:</strong> {{ myInfoCtrl.user.email }}</p>
+    <p><strong>Phone:</strong> {{ myInfoCtrl.user.phone }}</p>
+    <p><strong>Favorite Menu Item:</strong> {{ myInfoCtrl.user.menuNumber }}</p>
+  
+    <div ng-if="myInfoCtrl.favoriteItem">
+      <h4>Favorite Item Details</h4>
+      <img ng-src="images/menu/{{ myInfoCtrl.favoriteItem.short_name.charAt(0) }}/{{ myInfoCtrl.favoriteItem.short_name }}.jpg"
+           alt="{{ myInfoCtrl.favoriteItem.name }}"
+           class="img-responsive"
+           width="250" height="150">
+      <p><strong>Name:</strong> {{ myInfoCtrl.favoriteItem.name }}</p>
+      <p><strong>Description:</strong> {{ myInfoCtrl.favoriteItem.description }}</p>
+    </div>
+  </div>
+  
+  <div class="container" ng-if="myInfoCtrl.notRegistered">
+    <h2>Not Signed Up Yet</h2>
+    <p>Please <a ui-sref="public.signup">Sign up Now!</a></p>
+  </div>
+  
