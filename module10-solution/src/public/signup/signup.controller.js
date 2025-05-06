@@ -1,8 +1,6 @@
 (function () {
     "use strict";
     
-    console.log("Test SignUpController loaded!");
-    
     angular.module('public')
     .controller('SignUpController', SignUpController);
     

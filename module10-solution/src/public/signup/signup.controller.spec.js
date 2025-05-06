@@ -1,4 +1,5 @@
-describe('SignUpController', function () {
+// Task 4
+describe('SignUpController Tests', function () {
     var $controller, $httpBackend, MenuService, $q, $rootScope, ctrl;
   
     beforeEach(module('public'));
@@ -22,7 +23,7 @@ describe('SignUpController', function () {
       $httpBackend.verifyNoOutstandingRequest();
     });
   
-    it('should return true for a valid menu item (e.g., L1)', function () {
+    it('This should validate "L1" as an existing favorite item', function () {
       var mockMenuData = {
         menu_items: [
           { short_name: "L1", name: "Lo Mein", description: "Delicious noodles." }
@@ -33,15 +34,13 @@ describe('SignUpController', function () {
                   .respond(200, mockMenuData);
   
       ctrl.user.menuNumber = "L1";
-  
-      var result;
       ctrl.validateMenuNumber();
       $httpBackend.flush();
   
       expect(ctrl.menuItemValid).toBe(true);
     });
   
-    it('should return false for an invalid menu item (e.g., L99)', function () {
+    it('This should invalidate a non-existent item like "L99"', function () {
       var mockMenuData = {
         menu_items: []
       };
@@ -50,7 +49,6 @@ describe('SignUpController', function () {
                   .respond(200, mockMenuData);
   
       ctrl.user.menuNumber = "L99";
-  
       ctrl.validateMenuNumber();
       $httpBackend.flush();
   

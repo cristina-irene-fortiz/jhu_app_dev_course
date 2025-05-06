@@ -1,42 +1,43 @@
 <div class="container">
     <h2>Sign Up for Our Newsletter</h2>
     <form name="signUpForm" ng-submit="signUpCtrl.submit()" novalidate>
-  
-      <div class="form-group">
-        <label>First Name</label>
-        <input type="text" class="form-control" ng-model="signUpCtrl.user.firstName" required>
-      </div>
-  
-      <div class="form-group">
-        <label>Last Name</label>
-        <input type="text" class="form-control" ng-model="signUpCtrl.user.lastName" required>
-      </div>
-  
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" class="form-control" ng-model="signUpCtrl.user.email" required>
-      </div>
-  
-      <div class="form-group">
-        <label>Phone Number</label>
-        <input type="tel" class="form-control" ng-model="signUpCtrl.user.phone" required>
-      </div>
-  
-      <div class="form-group">
-        <label>Favorite Menu Item (e.g., L1)</label>
-        <input type="text" class="form-control"
-               ng-model="signUpCtrl.user.menuNumber"
-               ng-blur="signUpCtrl.validateMenuNumber()" required>
-  
-        <div class="text-danger" ng-if="signUpCtrl.menuItemValid === false">
-          No such menu number exists.
+
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" ng-model="signUpCtrl.user.firstName" required>
         </div>
-      </div>
-  
-      <button type="submit" class="btn btn-primary"
-              ng-disabled="signUpForm.$invalid">
-        Submit
-      </button>
-  
-      <div class="alert alert-success" ng-if="signUpCtrl.saved">
-  
+
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" ng-model="signUpCtrl.user.lastName" required>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" ng-model="signUpCtrl.user.email" required>
+        </div>
+
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" class="form-control" ng-model="signUpCtrl.user.phone" required>
+        </div>
+
+        <div class="form-group">
+            <label>Favorite Menu Item (e.g., L1)</label>
+            <input type="text" class="form-control" ng-model="signUpCtrl.user.menuNumber"
+                ng-blur="signUpCtrl.validateMenuNumber()" required>
+
+            <div class="text-danger" ng-if="signUpCtrl.menuItemValid === false">
+                No such menu number exists.
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" ng-disabled="signUpForm.$invalid">
+            Submit
+        </button>
+
+        <div class="alert alert-success" ng-if="signUpCtrl.saved">
+            <strong>Success!</strong> Your information has been saved.
+        </div>
+    </form>
+</div>
