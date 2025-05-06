@@ -1,8 +1,12 @@
 (function () {
     "use strict";
     
+    console.log("Test SignUpController loaded!");
+    
     angular.module('public')
     .controller('SignUpController', SignUpController);
+    
+
     
     SignUpController.$inject = ['MenuService', 'UserInfoService', '$q'];
     function SignUpController(MenuService, UserInfoService, $q) {
